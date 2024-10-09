@@ -1,0 +1,19 @@
+﻿@model PortfolioProjectNight.Models.Skill
+
+@{
+    ViewBag.Title = "CreateSkill";
+    Layout = "~/Views/Admin/Index.cshtml";
+}
+
+<h2 class="mb-4">Yeni Yetenek Ekleme Sayfası</h2>
+
+
+<form method="post">
+    <label>Yetenek Başlığı</label>
+    @Html.TextBoxFor(x => x.SkillName, new { @class = "form-control" })
+    <br />
+    <label>Yetenek Değeri</label>
+    @Html.TextBoxFor(x => x.Rate, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-success">Yeni Yetenek Ekle</button>
+</form>
