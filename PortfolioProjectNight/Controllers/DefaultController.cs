@@ -90,6 +90,17 @@ namespace PortfolioProjectNight.Controllers
             var values = context.Testimonial.ToList();
             return PartialView(values);
         }
+        public PartialViewResult PartialService()
+        {
+            var values = context.Service.ToList();
+            return PartialView(values);
+        }
+
+        public PartialViewResult PartialPortfolio()
+        {
+            var values = context.Portfolio.ToList();
+            return PartialView(values); 
+        }
     }
     
 }
