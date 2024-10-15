@@ -4,15 +4,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using PagedList;
+using PagedList.Mvc;
 
 namespace PortfolioProjectNight.Controllers
 {
     public class SkillController : Controller
     {
         DbMyPortfolioNightEntities context = new DbMyPortfolioNightEntities();
-        public ActionResult SkillList()
+        public ActionResult SkillList(int p=1)
         {
-            var values = context.Skill.ToList();
+            var values = context.Skill.ToList().ToPagedList(p,5);
             return View(values);
         }
 

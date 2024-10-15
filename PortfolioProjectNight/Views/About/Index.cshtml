@@ -1,0 +1,28 @@
+﻿@model List<PortfolioProjectNight.Models.About>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Admin/Index.cshtml";
+}
+
+<table class=" table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Ad Soyad</th>
+        <th>Açıklama</th>
+        <th>Fotoğraf</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+
+@foreach(var item in Model)
+            {
+                <tr>
+                    <td>@item.AboutId</td>
+                    <td>@item.Title</td>
+                    <td>@item.Description</td>
+                    <td><img src="~/Content/Pigra-1.0.0/img/personal-portfolio-website-template.jpg" alt="Büşra Ölmez" width="75" height="100" /></td>
+                    <td><a href="/About/DeleteAbout/@item.AboutId" class="btn btn-danger">Sil</a></td>
+                    <td><a href="/About/UpdateAbout/@item.AboutId" class="btn btn-warning">Güncelle</a></td>
+                </tr>
+            }
+</table>

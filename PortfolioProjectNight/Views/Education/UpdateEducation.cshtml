@@ -1,16 +1,17 @@
 ﻿@model PortfolioProjectNight.Models.Education
 @{
-    ViewBag.Title = "CreateEducation";
+    ViewBag.Title = "UpdateEducation";
     Layout = "~/Views/Admin/Index.cshtml";
 }
 
-<h2 class="mb-4">Eğitim Bilgisi Ekleme Sayfası</h2>
+<h2 class="mb-4">Eğitim Bilgisi Güncelleme</h2>
 
 <form method="post">
+    @Html.HiddenFor(x => x.EducationId)
     <label>Üniversite Adı</label>
     @Html.TextBoxFor(x => x.SubTitle, new { @class = "form-control" })
     <br />
-    <label>Bölüm Adı</label>
+    <label>Bölüm</label>
     @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
     <br />
     <label>Açıklama</label>
@@ -19,5 +20,7 @@
     <label>Tarih</label>
     @Html.TextBoxFor(x => x.Date, new { @class = "form-control" })
     <br />
-    <button class="btn btn-success">Yeni Eğitim Bilgisi Ekle</button>
+    <button class="btn btn-success">Eğitim Bilgisini Güncelle</button>
 </form>
+
+
