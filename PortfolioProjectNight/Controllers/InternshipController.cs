@@ -32,11 +32,25 @@ namespace PortfolioProjectNight.Controllers
         [HttpPost]
         public ActionResult UpdateInternship(Internship internship)
         {
-            var values = context.Internship.Find(internship);
+            var values = context.Internship.Find(internship.InternshipId);
             values.Title = internship.Title;
             values.SubTitle = internship.SubTitle;
             values.Description= internship.Description; 
             values.Date = internship.Date;
+            context.SaveChanges();
+            return RedirectToAction("InternshipList");
+        }
+
+        [HttpGet]
+        public ActionResult CreateInternship()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult CreateInternship(Internship internship)
+        {
+            var values = context.Internship.Add(internship);
             context.SaveChanges();
             return RedirectToAction("InternshipList");
         }
