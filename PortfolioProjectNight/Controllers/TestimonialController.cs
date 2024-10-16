@@ -36,6 +36,7 @@ namespace PortfolioProjectNight.Controllers
             values.Title = testimonial.Title;
             values.SubTitle= testimonial.SubTitle;  
             values.Description = testimonial.Description;
+            values.ImageUrl = testimonial.ImageUrl; 
             context.SaveChanges();
             return RedirectToAction("TestimonialList");
         }

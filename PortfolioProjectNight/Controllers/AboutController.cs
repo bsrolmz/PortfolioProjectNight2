@@ -36,6 +36,7 @@ namespace PortfolioProjectNight.Controllers
             var value = context.About.Find(about.AboutId);
             value.Title = about.Title;
             value.Description = about.Description;
+            value.ImageUrl = about.ImageUrl;    
             context.SaveChanges();
             return RedirectToAction("Index");
         }

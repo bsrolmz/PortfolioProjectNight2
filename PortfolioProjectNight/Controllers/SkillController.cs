@@ -52,7 +52,8 @@ namespace PortfolioProjectNight.Controllers
         {
             var value = context.Skill.Find(skill.SkillId);
             value.SkillName = skill.SkillName;  
-            value.Rate = skill.Rate;    
+            value.Rate = skill.Rate;   
+            value.Icon = skill.Icon;    
             context.SaveChanges();
             return RedirectToAction("SkillList");
         }
