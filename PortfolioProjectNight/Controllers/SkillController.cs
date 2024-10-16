@@ -28,6 +28,7 @@ namespace PortfolioProjectNight.Controllers
         public ActionResult CreateSkill(Skill skill)
         {
             var values = context.Skill.Add(skill);
+            ViewBag.rate = skill.Rate;
             context.SaveChanges();
             return RedirectToAction("SkillList");
         }
