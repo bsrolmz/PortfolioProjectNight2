@@ -239,7 +239,6 @@
     <Content Include="Content\Pigra-1.0.0\img\blog-3.jpg" />
     <Content Include="Content\Pigra-1.0.0\img\blog-4.jpg" />
     <Content Include="Content\Pigra-1.0.0\img\header-img.jpg" />
-    <Content Include="Content\Pigra-1.0.0\img\personal-portfolio-website-template.jpg" />
     <Content Include="Content\Pigra-1.0.0\img\Portfolio-1.jpg" />
     <Content Include="Content\Pigra-1.0.0\img\portfolio-2.jpg" />
     <Content Include="Content\Pigra-1.0.0\img\portfolio-3.jpg" />
@@ -273,7 +272,6 @@
     <Content Include="Content\Pigra-1.0.0\lib\wow\wow.js" />
     <Content Include="Content\Pigra-1.0.0\lib\wow\wow.min.js" />
     <Content Include="Content\Pigra-1.0.0\LICENSE.txt" />
-    <Content Include="Content\Pigra-1.0.0\personal-portfolio-website-template.jpg" />
     <Content Include="Content\Pigra-1.0.0\READ-ME.txt" />
     <Content Include="Content\sidebar-01\css\bootstrap.min.css" />
     <Content Include="Content\sidebar-01\css\bootstrap\mixins\_border-radius.css" />
@@ -282,7 +280,6 @@
     <Content Include="Content\sidebar-01\css\bootstrap\utilities\_stretched-link.css" />
     <Content Include="Content\sidebar-01\css\bootstrap\_media.css" />
     <Content Include="Content\sidebar-01\css\style.css" />
-    <Content Include="Content\sidebar-01\images\logo1.jpg" />
     <Content Include="Content\sidebar-01\index.html" />
     <Content Include="Content\sidebar-01\js\bootstrap.min.js" />
     <Content Include="Content\sidebar-01\js\jquery.min.js" />
