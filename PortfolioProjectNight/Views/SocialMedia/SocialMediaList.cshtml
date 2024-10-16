@@ -1,0 +1,45 @@
+﻿@model List<PortfolioProjectNight.Models.SocialMedia>
+
+@{
+    ViewBag.Title = "SocialMediaList";
+    Layout = "~/Views/Admin/Index.cshtml";
+}
+
+<h2 class="mb-4">Sosyal Medya Hesaplarım</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Uygulama İsmi</th>
+        <th>Bağlantım</th>
+        <th>İkon</th>
+        <th>Durum</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <th>@item.SocialMediaId</th>
+            <td>@item.Title</td>
+            <td>@item.Url</td>
+            <td>@item.Icon</td>
+            <td>
+                @if (item.Status == false)
+                {
+                    <a href="/SocialMedia/ChangeSocialMediaStatusToTrue/@item.SocialMediaId" class="btn btn-success">Aktif Yap</a>
+                }
+                else
+                {
+                    <a href="/SocialMedia/ChangeSocialMediaStatusToFalse/@item.SocialMediaId" class="btn btn-dark">Pasif Yap</a>
+                }
+            </td>
+               <td> <a href="/SocialMedia/DeleteSocialMedia/@item.SocialMediaId" class="btn btn-danger">Sil</a></td>
+               <td><a href="/SocialMedia/UpdateSocialMedia/@item.SocialMediaId" class="btn btn-warning">Güncelle</a></td>
+               
+              
+        </tr>
+    }
+</table>
+
+<a href="/SocialMedia/CreateSocialMedia/" class="btn btn-success">Ekle</a>

@@ -1,0 +1,27 @@
+﻿@model PortfolioProjectNight.Models.Admin
+@{
+    ViewBag.Title = "UpdateSettings";
+    Layout = "~/Views/Admin/Index.cshtml";
+}
+
+<h2 class="mb-4">Bilgilerimi Güncelle</h2>
+
+<form method="post">
+    @Html.HiddenFor(x => x.AdminId)
+    <label>Ad Soyad</label>
+    @Html.TextBoxFor(x => x.NameSurname, new { @class = "form-control" })
+    <br />
+    <label>Email</label>
+    @Html.TextBoxFor(x => x.Email, new { @class = "form-control" })
+    <br />
+    <label>Telefon Numarası</label>
+    @Html.TextBoxFor(x => x.Phone, new { @class = "form-control" })
+    <br />
+    <label>Kullanıcı Adı</label>
+    @Html.TextBoxFor(x => x.UserName, new { @class = "form-control" })
+    <br />
+    <label>Şifre</label>
+    @Html.TextBoxFor(x => x.Password, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-success">Eğitim Bilgisini Güncelle</button>
+</form>

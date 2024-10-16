@@ -1,4 +1,7 @@
-﻿@model List<PortfolioProjectNight.Models.Contact>
+﻿@using PagedList
+@using PagedList.Mvc
+
+@model PagedList.IPagedList<PortfolioProjectNight.Models.Contact>
 
 @{
     ViewBag.Title = "Inbox";
@@ -10,8 +13,10 @@
     <tr>
         <th>#</th>
         <th>Gönderen</th>
-        <th>Tarih</th>
+        <th>Email</th>
+        <th>Kategori</th>
         <th>Konu</th>
+        <th>Tarih</th>
         <th>Durum</th>
         <th>Mesajı Aç</th>
         <th>Mesajı Sil</th>
@@ -19,11 +24,45 @@
     @foreach (var item in Model)
     {
         count++;
+        string badgeClass = "";
+        switch (item.Category.CategoryId)
+        {
+            case 1:
+                badgeClass = "badge bg-danger";
+                break;
+            case 2:
+                badgeClass = "badge bg-success";
+                break;
+            case 3:
+                badgeClass = "badge bg-primary";
+                break;
+            case 4:
+                badgeClass = "badge bg-warning";
+                break;
+            case 5:
+                badgeClass = "badge bg-danger";
+                break;
+            case 6:
+                badgeClass = "badge bg-success";
+                break;
+            case 7:
+                badgeClass = "badge bg-primary";
+                break;
+            case 8:
+                badgeClass = "badge bg-warning";
+                break;
+            default:
+                badgeClass = "badge bg-dark";
+                break;
+        }
+
         <tr>
             <td>@count</td>
             <td>@item.NameSurname</td>
-            <td>@item.SendDate</td>
+            <td>@item.Email</td>
+            <td><span class="@badgeClass p-2" style="color:white; font-size: small">@item.Category.CategoryName</span></td>
             <td>@item.Subject</td>
+            <td>@item.SendDate</td>
 
             @if (item.IsRead == false)
             {
@@ -35,8 +74,15 @@
                 <td><a href="/Message/ChangeMessageStatusToFalse/@item.ContactId" class="btn btn-dark">Okunmadı Olarak İşaretle</a></td>
             }
 
-            <td><a href="#" class="btn btn-warning">Mesajı Aç</a></td>
-            <td><a href="#" class="btn btn-danger">Mesajı Sil</a></td>
+            <td><a href="/Message/MessageDetail/@item.ContactId" class="btn btn-warning">Mesajı Aç</a></td>
+            <td><a href="/Message/DeleteMessage/@item.ContactId" class="btn btn-danger">Mesajı Sil</a></td>
         </tr>
     }
 </table>
+<br />
+<br />
+@Html.PagedListPager((IPagedList)Model, p => Url.Action("Inbox", new { p }), new PagedListRenderOptions
+{
+    LiElementClasses = new List<string>
+    { "page-link"}
+})
